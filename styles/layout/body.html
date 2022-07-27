@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	{include file="$template_folder/head.html"}
+	<body>
+		<div id="wrapper">
+			{include file="$template_folder/header.html"}
+
+			<div class="content-holder container clearfix">
+				<div class="page-content clearfix">
+					<div  class="alert alert-ajax hidden ajax-response">
+					    <div id="ajax-response-message"></div>
+					</div>
+					<h3>Hi Speed menu</h3>
+					<ul class="nav nav-pills">
+						<li class="{$name}"><a href="{$baseurl}/index.php">Home</a></li>
+						<li class="{$create_invoice}"><a href="{$baseurl}/create_invoice.php">Create invoice</a></li>
+						<li class="{$view_invoice}"><a href="{$baseurl}/view_invoices.php">View All Invoices</a></li>
+						<li class="{$inv_bill}"><a href="{$baseurl}/inv_bill.php">Invoice Bill</a></li>
+					</ul>
+					<br>
+					{foreach item=template_file from=$template_files}
+						{show_template($template_file)}
+					{/foreach}
+				</div>
+				
+			</div><!-- content-holder -->
+		</div><!-- wrapper -->
+		{include file="$template_folder/js.html"}
+		<!-- Modal -->
+		
+	</body>
+</html>

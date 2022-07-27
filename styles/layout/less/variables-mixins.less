@@ -1,0 +1,154 @@
+// variables
+@base-color:#545a5f;
+@bg-color:#f2f4f8;
+@danger-color:#f05050;
+@base-font: 'Source Sans Pro';
+@base-anchor: @base-color;
+@anchor-hover: #303437;
+@white-color:#fff;
+@meneLine-color:#939aa0;
+@bg-color1:#e0eaec;
+@sidebar-color:#181f24;
+@sidebarRight-color:#e0eaec;
+@base-anchor1:#8ca1af;
+@sidebar-hover:#2c3942;
+@heading-color:#788188;
+@play-icon:#9badb9;
+@info-color:#2ea0b6;
+@border-color:#eaeef1;
+@border-radius4px:4px;
+@uploadFile-color:#c9c9c9;
+@border-radius20px:20px;
+@grey-color:#d7d7d7;
+@heading-color:#444546;
+@paragraph-color:#919394;
+@progress-bg:#e2e2e2;
+@progress-color:#2196f3;
+@tab-nav:#565656;
+@input-color:#adadad;
+@success-color:#4caf50;
+@grey-color1:#fafafa;
+// mixins
+/* placeholder input styles */
+@placeholder-color: #ebebeb;
+.search input[type="text"]::-webkit-input-placeholder { /* WebKit browsers */
+	color: @placeholder-color;
+}
+.search input[type="text"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: @placeholder-color;
+}
+.search input[type="text"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: @placeholder-color;
+	opacity: 1;
+}
+.search input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: @placeholder-color;
+}
+.list-style(){
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.boxsizing(){
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.after() {
+	content: '';
+	display: block;
+	clear: both;
+}
+.align-middle() {
+	display: inline-block;
+	vertical-align: middle;
+}
+.alltransition(@name, @duration, @ease) {
+	-webkit-transition: @name, @duration, @ease;
+	-moz-transition: @name, @duration, @ease;
+	-ms-transition: @name, @duration, @ease;
+	-o-transition: @name, @duration, @ease;
+	transition: @name, @duration, @ease;
+}
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: @string;
+}
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing:    @type;
+	box-sizing:         @type;
+}
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+ 	background-color: @startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+	background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+	background-image: -moz-linear-gradient(left, @startColor, @endColor);
+	background-image: -ms-linear-gradient(left, @startColor, @endColor);
+	background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+.animation (@name, @duration, @ease) {
+	-webkit-animation: @name @duration @ease;
+	-moz-animation:    @name @duration @ease;
+	-ms-animation:     @name @duration @ease;
+}
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: 	 @string;
+	-ms-transform: 		 @string;
+	-o-transform: 		 @string;
+}
+.scale (@factor) {
+	-webkit-transform: scale(@factor);
+	-moz-transform: 	 scale(@factor);
+	-ms-transform: 		 scale(@factor);
+	-o-transform: 		 scale(@factor);
+}
+.rotate (@deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: 	 rotate(@deg);
+	-ms-transform: 		 rotate(@deg);
+	-o-transform: 		 rotate(@deg);
+}
+.skew (@deg, @deg2) {
+	-webkit-transform:       skew(@deg, @deg2);
+	-moz-transform: 	 skew(@deg, @deg2);
+	-ms-transform: 		 skew(@deg, @deg2);
+	-o-transform: 		 skew(@deg, @deg2);
+}
+.translate (@x, @y:0) {
+	-webkit-transform:       translate(@x, @y);
+	-moz-transform: 	 translate(@x, @y);
+	-ms-transform: 		 translate(@x, @y);
+	-o-transform: 		 translate(@x, @y);
+}

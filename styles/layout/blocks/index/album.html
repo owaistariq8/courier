@@ -1,0 +1,30 @@
+<div class="items-holder clearfix">
+	<h2>New Albums</h2>
+	<div class="columns-holder clearfix">
+		{foreach item=value from=$test_count_album}
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 column">
+			<div class="img-holder">
+				<a href="#">
+					<img src="{$images}/{$value}.jpg" alt="">
+				</a>
+				<div class="mask">
+					<a href="#" class="play-icon">
+						<i class="icon-control-play"></i>		
+					</a>
+				</div>	
+			</div>
+			<p>
+				<a href="#">
+					Hidden
+				</a>
+			</p>
+			<span>
+				by 
+				<a href="#">
+					Miaow
+				</a>
+			</span>
+		</div>
+		{/foreach}
+	</div>
+</div>

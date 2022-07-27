@@ -1,0 +1,122 @@
+body.active {
+	.sidebar {
+		width: 200px;
+		> ul {
+			> li {
+				position: relative;
+				> a {
+					text-align: left;
+					line-height: 50px;
+					font-size: 13px;
+					overflow-y: hidden;
+					color: @base-anchor1;
+					padding: 0 15px;
+					.alltransition(@name:all, @duration:.3s, @ease:ease-in-out);
+					i {
+						font-size: 16px;
+						height: 50px;
+						line-height: 50px;
+						margin: 0 10px 0 0;
+						.align-middle();
+					}
+					span {
+						display: inline-block;
+					}
+					&:hover,
+					&:focus,
+					&:active,
+					&.active {
+						background-color: @sidebar-hover;
+					}
+				}
+			}
+		}
+	}	
+}
+.sidebar {
+	width: 70px;
+	position: fixed;
+	height: 100%;
+	top: 60px;	
+	left: 0;
+	z-index: 100;
+	background-color: @sidebar-color;
+	.alltransition(@name:all, @duration:.3s, @ease:ease-in-out);
+	> ul {
+		.list-style();
+		> li {
+			position: relative;
+			>a {
+				display: block;
+				text-align: center;
+				line-height: 50px;
+				font-size: 11px;
+				overflow-y: hidden;
+				color: @base-anchor1;
+				.alltransition(@name:all, @duration:.3s, @ease:ease-in-out);
+				i {
+					font-size: 16px;
+					height: 50px;
+					line-height: 50px;
+					margin: 0;
+					display: block;
+					.alltransition(@name:all, @duration:.3s, @ease:ease-in-out);
+				}
+				span {
+					display: block;
+					margin: 0 0 -50px;.alltransition(@name:all, @duration:.3s, @ease:ease-in-out);
+				}
+				&:hover,
+				&:focus,
+				&:active,
+				&.active {
+					background-color: @sidebar-hover;
+					i {
+						margin: -50px 0 0;
+					}
+					span {
+						margin: 0;
+					}
+				}
+			}
+			ul {
+				position: absolute;
+				top: 0;
+				left: 100%;
+				width: 180px;
+				background-color: @sidebar-color;
+				display: none;
+				.list-style();
+				li {
+					a {
+						display: block;
+						padding: 0 10px;
+						line-height: 40px;
+						font-size: 14px;
+						color: @base-anchor1;
+						&:hover,
+						&:focus,
+						&:active,
+						&.active {
+							background-color: @sidebar-hover;
+						}
+					}
+				}
+			}
+			&:hover {
+				> ul {
+					display: block;
+				}
+				> a {
+					background-color: @sidebar-hover;
+					i {
+						margin: -50px 0 0;
+					}
+					span {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}

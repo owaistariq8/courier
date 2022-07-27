@@ -1,0 +1,153 @@
+<div >
+	{$clients=get_all_clients()}
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Companay Name</th>
+				<th>Account number</th>
+				<th>Local Rate</th>
+				<th>Punjab Rate</th>
+				<th>Sindh Rate</th>
+				<th>Fuel Adjust Charges</th>
+				<th>Actions</th>
+				<th>General Sales Tax</th>
+			</tr>
+		</thead>
+		<tbody>
+		{foreach $clients as $client}
+			<tr class="{$client.id}">
+				<td class="cname" id="{$client.id}_cname" data-id="{$client.cname}">{$client.cname}</td>
+				<td class="acno" id="{$client.id}_acno" data-id="{$client.acno}">{$client.acno}</td>
+				<td class="lr" id="{$client.id}_lr" data-id="{$client.lr}">{$client.lr}</td>
+				<td class="pr" id="{$client.id}_pr" data-id="{$client.pr}">{$client.pr}</td>
+				<td class="sr" id="{$client.id}_sr" data-id="{$client.sr}">{$client.sr}</td>
+				<td class="fac" id="{$client.id}_fac" data-id="{$client.fac}">{$client.fac}</td>
+				<td><!-- Single button -->
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Actions
+						<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="{$baseurl}/view_invoices.php?acno={$client.acno}&cid={$client.id}" class="view_btn" id="{$client.id}" >View Invoices</a></li>
+							<li><a href="#" data-toggle="modal" class="edit_btn" id="{$client.id}" data-target="#edit_acc">Edit</a></li>
+							<li><a href="{$baseurl}/index.php?delete_id={$client.id}"  >Delete</a></li>
+						</ul>
+					</div>
+				</td>
+				<td class="gst" id="{$client.id}_gst" data-id="{$client.gst}">{$client.gst}</td>
+			</tr>
+		{/foreach}
+
+		</tbody>
+	</table>
+</div>
+<div id="edit_acc" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Create An Party/Client Account</h4>
+			</div>
+			<div class="modal-body">
+				<p>Create Account of the party and set its specific rates</p>
+				<form id="edit_acc_form" method="POST">
+					<div class="form-group">
+						<h3>Account Details</h3>
+						<label>Company Name(required)</label>
+						<input type="text" class="form-control" name="cname" id="cname_edit">
+					</div>
+					<div class="form-group">
+						<label>Account Number (required)</label>
+						<input type="text" class="form-control" name="acno" id="acno_edit">
+					</div>
+					<div class="form-group">
+						<label>Local Rate </label>
+						<input type="text" class="form-control"  name="lr" id="lr_edit">
+					</div>
+					<div class="form-group">
+						<label>Punjab Rate </label>
+						<input type="text" class="form-control"  name="pr" id="pr_edit">
+					</div>
+					<div class="form-group">
+						<label>Sindh Rate </label>
+						<input type="text" class="form-control"  name="sr" id="sr_edit">
+					</div>
+					<div class="form-group">
+						<label>Fuel Adjust Charges </label>
+						<input type="text" class="form-control"  name="fac" id="fac_edit">
+					</div>
+					<div class="form-group">
+						<label>General Sales Tax (GST)</label>
+						<input type="text" class="form-control"  name="gst" id="gst_edit">
+					</div>
+					<input type="hidden" value="" name="_id" id="_id"/>
+					<button id='edit_acc_btn' class="btn btn-success btn-block">Edit Account</button>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id="create_acc" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+	<!-- Modal content-->
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Create An Party/Client Account</h4>
+		</div>
+		<div class="modal-body">
+			<p>Create Account of the party and set its specific rates</p>
+			<form id="create_acount_form" method="POST">
+				<div class="form-group">
+					<h3>Account Details</h3>
+					<label>Company Name(required)</label>
+					<input type="text" class="form-control" name="cname" id="cname">
+				</div>
+				<div class="form-group">
+					<label>Account Number (required)</label>
+					<input type="text" class="form-control" name="acno" id="acno">
+				</div>
+				<div class="form-group">
+					<label>Local Rate </label>
+					<input type="text" class="form-control"  name="lr" id="lr">
+				</div>
+				<div class="form-group">
+					<label>Punjab Rate </label>
+					<input type="text" class="form-control"  name="pr" id="pr">
+				</div>
+				<div class="form-group">
+					<label>Sindh Rate </label>
+					<input type="text" class="form-control"  name="sr" id="sr">
+				</div>
+				<div class="form-group">
+					<label>Fuel Adjust Charges </label>
+					<input type="text" class="form-control"  name="fac" id="fac">
+				</div>
+				<div class="form-group">
+					<label>General Sales Tax (GST)</label>
+					<input type="text" class="form-control"  name="gst" id="gst">
+				</div>
+				<button id='create_account' class="btn btn-success btn-block">Add Account</button>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+
+	</div>
+</div>
+
+<style type="text/css">
+	
+	.dropdown-menu{
+		position:relative !important; 
+		z-index:0 !important;
+		overflow: hidden;
+	}
+</style>
