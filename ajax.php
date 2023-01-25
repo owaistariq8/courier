@@ -58,7 +58,7 @@ switch ($mode)
 					unset($_POST['mode']);
 					$time = time();
 					$insert_query = "INSERT INTO `clients`( `cname`, `acno`, `lr`, `pr`, `sr`, `fac`, `gst`, `time_added`, `date_added`, `date_updated`) 
-					VALUES ('{$company_name}','{$acount_number}',{$local_rate},{$sindh_rate},{$punjab_rate},{$fuel_adjust_charge},{$gst},{$time},'".NOW()."','".NOW()."')";
+					VALUES ('{$company_name}','{$acount_number}',{$local_rate},{$punjab_rate},{$sindh_rate},{$fuel_adjust_charge},{$gst},{$time},'".NOW()."','".NOW()."')";
 					$db->upsert($insert_query);
 					echo json_encode($_POST);
 				}

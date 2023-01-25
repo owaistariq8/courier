@@ -20,10 +20,10 @@
 	      	<tr class="parent">
 				<td><input type="text" class="form-control cnno keyup"  name="cnno" placeholder="CNNO"></td>
 				<td><input type="date" class="form-control date keyup"  name="date" placeholder="Date"></td>
-				<td><input type="text" class="form-control dest keyup"  name="dest" placeholder="Dest"></td>
-				<td><input type="text" class="form-control wt keyup"  name="wt" placeholder="KGS"></td>
-				<td><input type="text" class="form-control service keyup"  name="service" placeholder="SERVICE"></td>
-				<td><input type="text" class="form-control octroi keyup"  name="octroi" placeholder="OCTROI"></td>
+				<td><input type="text" value="KHI" class="form-control dest keyup"  name="dest" placeholder="Dest"></td>
+				<td><input type="text" class="form-control wt keyup"  name="wt" value="1" placeholder="KGS"></td>
+				<td><input type="text" value="OBC" class="form-control service keyup"  name="service" placeholder="SERVICE"></td>
+				<td><input type="text" value="0" class="form-control octroi keyup"  name="octroi" placeholder="OCTROI"></td>
 				<td><input type="text" class="form-control amount keyup"  name="amount" placeholder="AMOUNT"></td>
 	      	</tr>
 
@@ -43,7 +43,7 @@ function addrowtable(times)
 	var appnd_var ;
 	for (var i = times - 1; i >= 0; i--) 
 	{
-		var appnd_var = '<tr class="parent"><td><input type="text" class="form-control cnno keyup" name="cnno'+Math.random()+'" placeholder="CNNO"></td><td><input type="date" class="form-control date keyup" name="date'+Math.random()+'" placeholder="Date"></td><td><input type="text" class="form-control dest keyup" name="dest'+Math.random()+'" placeholder="Dest"></td><td><input type="text" class="form-control wt keyup" name="wt'+Math.random()+'" placeholder="KGS"></td><td><input type="text" class="form-control service keyup" name="service'+Math.random()+'" placeholder="SERVICE"></td><td><input type="text" class="form-control octroi keyup" name="octroi'+Math.random()+'" placeholder="OCTROI"></td><td><input type="text" class="form-control amount keyup" name="amount'+Math.random()+'" placeholder="AMOUNT"></td></tr>';
+		var appnd_var = '<tr class="parent"><td><input type="text" class="form-control cnno keyup" name="cnno'+Math.random()+'" placeholder="CNNO"></td><td><input type="date" class="form-control date keyup" name="date'+Math.random()+'" placeholder="Date"></td><td><input type="text" value="KHI" class="form-control dest keyup" name="dest'+Math.random()+'" placeholder="Dest"></td><td><input type="text" class="form-control wt keyup" value="1" name="wt'+Math.random()+'" placeholder="KGS"></td><td><input type="text" class="form-control service keyup" name="service'+Math.random()+'" value="OBC" placeholder="SERVICE"></td><td><input type="text" class="form-control octroi keyup" value="0" name="octroi'+Math.random()+'" placeholder="OCTROI"></td><td><input type="text" class="form-control amount keyup" name="amount'+Math.random()+'" placeholder="AMOUNT"></td></tr>';
 		$(document).find('.tbody').last().append(appnd_var);
 	}
 }

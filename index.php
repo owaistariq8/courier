@@ -1,5 +1,5 @@
 <?php
-
+// echo phpinfo();
 require_once( __DIR__."/includes/common.php");
 define("PAGE_NAME", "index");
 if(isset($_GET['delete_id'])&&is_numeric($_GET['delete_id'])&&$_GET['delete_id']!=0)

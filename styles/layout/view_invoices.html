@@ -38,7 +38,7 @@
     	{foreach item=invoice_result from=$invoice_results}
       	<tr>
 			<td class="cnno" id="{$invoice_result.id}_cnno" data-id="{$invoice_result.cnno}">{$invoice_result.cnno}</td>
-			<td class="date" id="{$invoice_result.id}_date" data-id="{$invoice_result.date}">{$invoice_result.date}</td>
+			<td class="date" id="{$invoice_result.id}_date" data-id="{$invoice_result.date}">{date('Y-m-d',strtotime($invoice_result.date))}</td>
 			<td class="dest" id="{$invoice_result.id}_dest" data-id="{$invoice_result.dest}">{$invoice_result.dest}</td>
 			<td class="wt" id="{$invoice_result.id}_wt" data-id="{$invoice_result.wt}">{$invoice_result.wt}</td>
 			<td class="service" id="{$invoice_result.id}_service" data-id="{$invoice_result.service}">{$invoice_result.service}</td>

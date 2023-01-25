@@ -8,7 +8,7 @@ if ($page <= 0)
 	$page = 1;
 }
  
-$per_page = 30; // Set how many records do you want to display per page.
+$per_page = 30000; // Set how many records do you want to display per page.
  
 $startpoint = ($page * $per_page) - $per_page;
 $limit = "{$startpoint} , {$per_page}";

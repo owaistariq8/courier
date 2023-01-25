@@ -100,7 +100,7 @@ if(CODE_MODE)
 	}
 	if(empty($local_baseurl))
 	{
-		$local_baseurl = "http://localhost/hispeed";
+		$local_baseurl = "http://hispeed.com";
 	}
 	define("BASEURL", $local_baseurl);
 }
@@ -110,7 +110,7 @@ else
 }
 if(empty($local_baseurl))
 {
-	$local_baseurl = "http://localhost/hispeed";
+	$local_baseurl = "http://hispeed.com";
 }
 define("BASEURL", $local_baseurl);
 define('EMAIL_VERIFICATION',1);

@@ -5,21 +5,21 @@ $db = new beatsaudio_db();
 
 if(empty($write_user))
 {
-    $write_user = 'root';
+    $write_user = 'hispeed';
 }
 
 if(empty($read_user))
 {
-    $read_user = 'root';
+    $read_user = 'hispeed';
 }
 
 if(empty($write_pass))
 {
-    $write_pass = '';
+    $write_pass = 's#@^9hI0wiD2';
 }
 if(empty($read_pass))
 {
-    $read_pass = '';
+    $read_pass = 's#@^9hI0wiD2';
 }
 
 $local = array(
@@ -53,12 +53,12 @@ $live = array(
 );
 if(CODE_MODE)
 {
-	$environment = $local;
 }
 else
 {
 	$environment = $live;
 }
+	$environment = $local;
 $db->connection($environment);
 
 ?>
